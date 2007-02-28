@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.mindquarry.tools</groupId>
+		<artifactId>mindquarry-desktop-tools</artifactId>
+		<version>1.0-M1</version>
+	</parent>
+
+	<groupId>com.mindquarry.tools</groupId>
+	<artifactId>mindquarry-desktop-client</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Mindquarry Desktop Client</name>
+
+	<scm>
+		<connection>scm:svn:https://www.mindquarry.org/repos/mindquarry-base/tags/mindquarry-1.1</connection>
+		<url>https://www.mindquarry.org/repos/mindquarry-base/tags/mindquarry-1.1</url>
+		<developerConnection>scm:svn:https://www.mindquarry.org/repos/mindquarry-base/tags/mindquarry-1.1</developerConnection>
+	</scm>
+
+	<dependencies>
+		<!-- SVN libs -->
+		<dependency>
+			<groupId>org.tigris.subversion</groupId>
+			<artifactId>javahl-api</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.svnkit</groupId>
+			<artifactId>svnkit</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		
+		<!-- spring libs -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tagBase>
+						https://www.mindquarry.org/repos/mindquarry-desktop-client/tags/mindquarry-desktop-client/
+					</tagBase>
+				</configuration>
+			</plugin>
+			<!--plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-SNAPSHOT</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/binary.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin-->
+		</plugins>
+	</build>
+</project>
