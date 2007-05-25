@@ -1,0 +1,92 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = LRFilterBar; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {originalSender = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {commit = id; saveAction = id; }; 
+            CLASS = "Mindquarry_Desktop_Client_AppDelegate"; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                changesController = id; 
+                changesTable = id; 
+                commitMessageField = id; 
+                commitMessageWindow = id; 
+                controller = id; 
+                progressController = id; 
+                progressWindow = id; 
+                refreshToolbarItem = id; 
+                serverController = id; 
+                statusField = id; 
+                statusSpinner = id; 
+                stopToolbarItem = id; 
+                taskController = id; 
+                taskTable = id; 
+                window = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = NSDatePicker; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {CLASS = OFGradientTableView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {
+            ACTIONS = {
+                cancelCreateTask = id; 
+                commitFiles = id; 
+                createTask = id; 
+                fileDoubleClick = id; 
+                fileSortSelectionChanged = id; 
+                finishCreateTask = id; 
+                focusSearchField = id; 
+                refresh = id; 
+                saveTask = id; 
+                saveUnsavedTasks = id; 
+                selectMode = id; 
+                setDone = id; 
+                setServerLocalPath = id; 
+                stopTasks = id; 
+                taskDoubleClick = id; 
+                titlebarSelectionChanged = id; 
+                toggleInspector = id; 
+            }; 
+            CLASS = RequestController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                changeColumn = id; 
+                changeEnabledColumn = id; 
+                changesController = id; 
+                changesFilterbar = id; 
+                createTaskSheet = id; 
+                createTaskTeamButton = id; 
+                createTaskTitle = id; 
+                filesSearchField = id; 
+                filesTeamSelector = id; 
+                filterBar = id; 
+                inspectorWindow = id; 
+                passwordField = id; 
+                priorityButton = id; 
+                rootView = id; 
+                serverDrawer = id; 
+                serversController = id; 
+                statusButton = id; 
+                taskColumn = id; 
+                taskTable = id; 
+                tasksController = id; 
+                tasksSearchField = id; 
+                tasksTeamSelector = id; 
+                tasksToolbar = id; 
+                tasksView = id; 
+                teamsController = id; 
+                window = id; 
+                workspaceTable = id; 
+                workspaceToolbar = id; 
+                workspaceView = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
