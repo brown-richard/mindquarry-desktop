@@ -1,0 +1,864 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		DD1CD0870BAAF47400BF34BA /* Java Headers */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DD1CD08F0BAAF47500BF34BA /* Build configuration list for PBXAggregateTarget "Java Headers" */;
+			buildPhases = (
+				DD1CD0860BAAF47400BF34BA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Java Headers";
+			productName = "Java Headers";
+		};
+		DD2EDB040B9F2180000238CE /* Disk Image */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DD2EDD970B9F21B5000238CE /* Build configuration list for PBXAggregateTarget "Disk Image" */;
+			buildPhases = (
+				DD2EDB030B9F2180000238CE /* ShellScript */,
+			);
+			dependencies = (
+				DD2EDD940B9F2197000238CE /* PBXTargetDependency */,
+			);
+			name = "Disk Image";
+			productName = "Disk Image";
+		};
+		DDE33FD10BA6D61800CE286B /* Java Ant */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DDE33FD90BA6D62200CE286B /* Build configuration list for PBXAggregateTarget "Java Ant" */;
+			buildPhases = (
+				DDE33FD00BA6D61800CE286B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Java Ant";
+			productName = "Java Ant";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		770B37ED0679A11B001EADE2 /* Mindquarry_Desktop_Client_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* Mindquarry_Desktop_Client_DataModel.xcdatamodel */; };
+		77C8280E06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		DD09A09C0BA0070A002FD5DD /* StatusBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DD09A09B0BA0070A002FD5DD /* StatusBackground.png */; };
+		DD09A3130BA01E6D002FD5DD /* LRFilterBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A30A0BA01E6D002FD5DD /* LRFilterBar.m */; };
+		DD09A3140BA01E6D002FD5DD /* LRFilterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A30C0BA01E6D002FD5DD /* LRFilterButton.m */; };
+		DD09A3150BA01E6D002FD5DD /* LRFilterButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A30E0BA01E6D002FD5DD /* LRFilterButtonCell.m */; };
+		DD09A3160BA01E6D002FD5DD /* LROverflowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A3100BA01E6D002FD5DD /* LROverflowButton.m */; };
+		DD09A3170BA01E6D002FD5DD /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A3120BA01E6D002FD5DD /* CTGradient.m */; };
+		DD09A5660BA03C26002FD5DD /* MQServer.m in Sources */ = {isa = PBXBuildFile; fileRef = DD09A5650BA03C26002FD5DD /* MQServer.m */; };
+		DD09A62B0BA04585002FD5DD /* AlertStopIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DD09A62A0BA04585002FD5DD /* AlertStopIcon.icns */; };
+		DD0B4A560BA166D60075798B /* task-add.png in Resources */ = {isa = PBXBuildFile; fileRef = DD0B4A550BA166D60075798B /* task-add.png */; };
+		DD1CD07E0BAAF3EE00BF34BA /* MacSVNHelperNative.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD1CD07D0BAAF3EE00BF34BA /* MacSVNHelperNative.mm */; };
+		DD29A7940BC1064900583931 /* action-both.png in Resources */ = {isa = PBXBuildFile; fileRef = DD29A7910BC1064900583931 /* action-both.png */; };
+		DD29A7950BC1064900583931 /* action-down.png in Resources */ = {isa = PBXBuildFile; fileRef = DD29A7920BC1064900583931 /* action-down.png */; };
+		DD29A7960BC1064900583931 /* action-up.png in Resources */ = {isa = PBXBuildFile; fileRef = DD29A7930BC1064900583931 /* action-up.png */; };
+		DD29A8180BC1553400583931 /* MQSVNJob.m in Sources */ = {isa = PBXBuildFile; fileRef = DD29A8170BC1553400583931 /* MQSVNJob.m */; };
+		DD2ED17D0B9EBDFD000238CE /* MQUpdateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2ED17C0B9EBDFD000238CE /* MQUpdateRequest.m */; };
+		DD2ED2D50B9EC8D2000238CE /* MQTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2ED2D40B9EC8D2000238CE /* MQTask.m */; };
+		DD2ED36B0B9ECFF4000238CE /* task-critical.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED3670B9ECFF4000238CE /* task-critical.png */; };
+		DD2ED36C0B9ECFF4000238CE /* task-important.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED3680B9ECFF4000238CE /* task-important.png */; };
+		DD2ED36D0B9ECFF4000238CE /* task-low.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED3690B9ECFF4000238CE /* task-low.png */; };
+		DD2ED36E0B9ECFF4000238CE /* task-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED36A0B9ECFF4000238CE /* task-medium.png */; };
+		DD2ED6EF0B9EDC97000238CE /* info.icns in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED6EE0B9EDC97000238CE /* info.icns */; };
+		DD2ED7090B9EDD88000238CE /* synchronize-vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED7080B9EDD88000238CE /* synchronize-vertical.png */; };
+		DD2ED7100B9EDDFA000238CE /* task-edit.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2ED70F0B9EDDFA000238CE /* task-edit.png */; };
+		DD2EDA190B9EE460000238CE /* servers.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2EDA180B9EE460000238CE /* servers.png */; };
+		DD39F4FB0B9D7FD200384D0C /* RequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD39F4FA0B9D7FD200384D0C /* RequestController.m */; };
+		DD576B1F0BAEA09900460C68 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = DD576B1E0BAEA09900460C68 /* refresh.png */; };
+		DD576B5A0BAEA28C00460C68 /* RequestController+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD576B590BAEA28C00460C68 /* RequestController+Toolbar.m */; };
+		DD576E5C0BAED3F500460C68 /* sync-down.png in Resources */ = {isa = PBXBuildFile; fileRef = DD576E5A0BAED3F500460C68 /* sync-down.png */; };
+		DD576E5D0BAED3F500460C68 /* sync-up.png in Resources */ = {isa = PBXBuildFile; fileRef = DD576E5B0BAED3F500460C68 /* sync-up.png */; };
+		DD5F20D00BB036C400DF8699 /* PathAbbreviation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5F20CF0BB036C400DF8699 /* PathAbbreviation.m */; };
+		DD6D6FD60BA957E60071E035 /* mindquarry-documents.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6D6FD40BA957E60071E035 /* mindquarry-documents.png */; };
+		DD6D6FD90BA958350071E035 /* mindquarry-tasks.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6D6FD80BA958350071E035 /* mindquarry-tasks.png */; };
+		DD6D704E0BA968910071E035 /* MQChangeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6D704D0BA968910071E035 /* MQChangeCell.m */; };
+		DD6D71080BA97CB80071E035 /* MQJob.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6D71070BA97CB80071E035 /* MQJob.m */; };
+		DD6D717A0BA9A9F20071E035 /* MQThreadJob.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6D71790BA9A9F20071E035 /* MQThreadJob.m */; };
+		DD71E7900BBD591D00E8A751 /* mindquarry-mac-svn.jar in Resources */ = {isa = PBXBuildFile; fileRef = DD71E78F0BBD591D00E8A751 /* mindquarry-mac-svn.jar */; };
+		DD7D79590C04700A007B996A /* oldDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = DD7D79580C04700A007B996A /* oldDataModel.xcdatamodel */; };
+		DD8661800B9D95E3000C7B66 /* MQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD86617F0B9D95E3000C7B66 /* MQRequest.m */; };
+		DD8661A50B9D97E2000C7B66 /* MQTeamsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8661A40B9D97E2000C7B66 /* MQTeamsRequest.m */; };
+		DD8662790B9D9BBD000C7B66 /* MQTasksRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8662780B9D9BBD000C7B66 /* MQTasksRequest.m */; };
+		DD8663CC0B9DA28E000C7B66 /* MQTaskPropertiesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8663CB0B9DA28E000C7B66 /* MQTaskPropertiesRequest.m */; };
+		DD8665610B9DB2F7000C7B66 /* DesktopClientAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DD86655C0B9DB2F7000C7B66 /* DesktopClientAppIcon.icns */; };
+		DD8665620B9DB2F7000C7B66 /* task-done.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86655D0B9DB2F7000C7B66 /* task-done.png */; };
+		DD8665630B9DB2F7000C7B66 /* task-new.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86655E0B9DB2F7000C7B66 /* task-new.png */; };
+		DD8665640B9DB2F7000C7B66 /* task-paused.png in Resources */ = {isa = PBXBuildFile; fileRef = DD86655F0B9DB2F7000C7B66 /* task-paused.png */; };
+		DD8665650B9DB2F7000C7B66 /* task-running.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8665600B9DB2F7000C7B66 /* task-running.png */; };
+		DD8665B90B9DB5A4000C7B66 /* MQTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8665B80B9DB5A4000C7B66 /* MQTaskCell.m */; };
+		DD8665EE0B9DB604000C7B66 /* OFGradientTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8665ED0B9DB604000C7B66 /* OFGradientTableView.m */; };
+		DDB81B500C69CBDD002AADF8 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB81B4F0C69CBDD002AADF8 /* Growl.framework */; };
+		DDB81BC70C69DB8D002AADF8 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDB81B4F0C69CBDD002AADF8 /* Growl.framework */; };
+		DDE33FC70BA6D60400CE286B /* JNIHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE33FBA0BA6D60400CE286B /* JNIHelper.mm */; };
+		DDE33FC80BA6D60400CE286B /* JVMController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE33FBC0BA6D60400CE286B /* JVMController.mm */; };
+		DDE33FC90BA6D60400CE286B /* SVNController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE33FBE0BA6D60400CE286B /* SVNController.mm */; };
+		DDE33FCB0BA6D60400CE286B /* StatusTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE33FC20BA6D60400CE286B /* StatusTransformer.m */; };
+		DDE33FFF0BA6DB4000CE286B /* MQTeam.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE33FFE0BA6DB4000CE286B /* MQTeam.mm */; };
+		DDF001050BA850C60008C3AA /* MQTaskInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF001040BA850C60008C3AA /* MQTaskInfoRequest.m */; };
+		DDF0016C0BA859530008C3AA /* JavaVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0016B0BA859530008C3AA /* JavaVM.framework */; };
+		DDFA7D700BAEEF7F0081BB87 /* MQChange.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFA7D6F0BAEEF7F0081BB87 /* MQChange.m */; };
+		DDFA7E060BAF040D0081BB87 /* NSNumber+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFA7E050BAF040D0081BB87 /* NSNumber+Additions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD2EDD930B9F2197000238CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = "Mindquarry Desktop Client";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDB81BE00C69DBA1002AADF8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDB81BC70C69DB8D002AADF8 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Mindquarry_Desktop_Client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mindquarry_Desktop_Client_Prefix.pch; sourceTree = "<group>"; };
+		770B37EC0679A11B001EADE2 /* Mindquarry_Desktop_Client_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Mindquarry_Desktop_Client_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		77C8280B06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mindquarry_Desktop_Client_AppDelegate.h; sourceTree = "<group>"; };
+		77C8280C06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mindquarry_Desktop_Client_AppDelegate.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Mindquarry Desktop Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mindquarry Desktop Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD09A09B0BA0070A002FD5DD /* StatusBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusBackground.png; path = Resources/StatusBackground.png; sourceTree = "<group>"; };
+		DD09A3090BA01E6D002FD5DD /* LRFilterBar.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LRFilterBar.h; sourceTree = "<group>"; };
+		DD09A30A0BA01E6D002FD5DD /* LRFilterBar.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LRFilterBar.m; sourceTree = "<group>"; };
+		DD09A30B0BA01E6D002FD5DD /* LRFilterButton.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LRFilterButton.h; sourceTree = "<group>"; };
+		DD09A30C0BA01E6D002FD5DD /* LRFilterButton.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LRFilterButton.m; sourceTree = "<group>"; };
+		DD09A30D0BA01E6D002FD5DD /* LRFilterButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LRFilterButtonCell.h; sourceTree = "<group>"; };
+		DD09A30E0BA01E6D002FD5DD /* LRFilterButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LRFilterButtonCell.m; sourceTree = "<group>"; };
+		DD09A30F0BA01E6D002FD5DD /* LROverflowButton.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LROverflowButton.h; sourceTree = "<group>"; };
+		DD09A3100BA01E6D002FD5DD /* LROverflowButton.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LROverflowButton.m; sourceTree = "<group>"; };
+		DD09A3110BA01E6D002FD5DD /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
+		DD09A3120BA01E6D002FD5DD /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
+		DD09A5640BA03C26002FD5DD /* MQServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQServer.h; sourceTree = "<group>"; };
+		DD09A5650BA03C26002FD5DD /* MQServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQServer.m; sourceTree = "<group>"; };
+		DD09A62A0BA04585002FD5DD /* AlertStopIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AlertStopIcon.icns; path = Resources/AlertStopIcon.icns; sourceTree = "<group>"; };
+		DD0B4A550BA166D60075798B /* task-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-add.png"; path = "Resources/task-add.png"; sourceTree = "<group>"; };
+		DD1CD07A0BAAF3DA00BF34BA /* MacSVNHelperNative.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MacSVNHelperNative.h; sourceTree = "<group>"; };
+		DD1CD07D0BAAF3EE00BF34BA /* MacSVNHelperNative.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacSVNHelperNative.mm; sourceTree = "<group>"; };
+		DD29A7910BC1064900583931 /* action-both.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "action-both.png"; path = "Resources/action-both.png"; sourceTree = "<group>"; };
+		DD29A7920BC1064900583931 /* action-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "action-down.png"; path = "Resources/action-down.png"; sourceTree = "<group>"; };
+		DD29A7930BC1064900583931 /* action-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "action-up.png"; path = "Resources/action-up.png"; sourceTree = "<group>"; };
+		DD29A8160BC1553400583931 /* MQSVNJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQSVNJob.h; sourceTree = "<group>"; };
+		DD29A8170BC1553400583931 /* MQSVNJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQSVNJob.m; sourceTree = "<group>"; };
+		DD2ED17B0B9EBDFD000238CE /* MQUpdateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQUpdateRequest.h; sourceTree = "<group>"; };
+		DD2ED17C0B9EBDFD000238CE /* MQUpdateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQUpdateRequest.m; sourceTree = "<group>"; };
+		DD2ED2D30B9EC8D2000238CE /* MQTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTask.h; sourceTree = "<group>"; };
+		DD2ED2D40B9EC8D2000238CE /* MQTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTask.m; sourceTree = "<group>"; };
+		DD2ED3670B9ECFF4000238CE /* task-critical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-critical.png"; path = "Resources/task-critical.png"; sourceTree = "<group>"; };
+		DD2ED3680B9ECFF4000238CE /* task-important.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-important.png"; path = "Resources/task-important.png"; sourceTree = "<group>"; };
+		DD2ED3690B9ECFF4000238CE /* task-low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-low.png"; path = "Resources/task-low.png"; sourceTree = "<group>"; };
+		DD2ED36A0B9ECFF4000238CE /* task-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-medium.png"; path = "Resources/task-medium.png"; sourceTree = "<group>"; };
+		DD2ED6EE0B9EDC97000238CE /* info.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = info.icns; path = Resources/info.icns; sourceTree = "<group>"; };
+		DD2ED7080B9EDD88000238CE /* synchronize-vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "synchronize-vertical.png"; path = "Resources/synchronize-vertical.png"; sourceTree = "<group>"; };
+		DD2ED70F0B9EDDFA000238CE /* task-edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-edit.png"; path = "Resources/task-edit.png"; sourceTree = "<group>"; };
+		DD2EDA180B9EE460000238CE /* servers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = servers.png; path = Resources/servers.png; sourceTree = "<group>"; };
+		DD39F4F90B9D7FD200384D0C /* RequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestController.h; sourceTree = "<group>"; };
+		DD39F4FA0B9D7FD200384D0C /* RequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestController.m; sourceTree = "<group>"; };
+		DD576B1E0BAEA09900460C68 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Resources/refresh.png; sourceTree = "<group>"; };
+		DD576B580BAEA28C00460C68 /* RequestController+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RequestController+Toolbar.h"; sourceTree = "<group>"; };
+		DD576B590BAEA28C00460C68 /* RequestController+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RequestController+Toolbar.m"; sourceTree = "<group>"; };
+		DD576E5A0BAED3F500460C68 /* sync-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sync-down.png"; path = "Resources/sync-down.png"; sourceTree = "<group>"; };
+		DD576E5B0BAED3F500460C68 /* sync-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sync-up.png"; path = "Resources/sync-up.png"; sourceTree = "<group>"; };
+		DD5F20CE0BB036C400DF8699 /* PathAbbreviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathAbbreviation.h; sourceTree = "<group>"; };
+		DD5F20CF0BB036C400DF8699 /* PathAbbreviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathAbbreviation.m; sourceTree = "<group>"; };
+		DD6D6FD40BA957E60071E035 /* mindquarry-documents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mindquarry-documents.png"; path = "Resources/mindquarry-documents.png"; sourceTree = "<group>"; };
+		DD6D6FD80BA958350071E035 /* mindquarry-tasks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mindquarry-tasks.png"; path = "Resources/mindquarry-tasks.png"; sourceTree = "<group>"; };
+		DD6D704C0BA968910071E035 /* MQChangeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQChangeCell.h; sourceTree = "<group>"; };
+		DD6D704D0BA968910071E035 /* MQChangeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQChangeCell.m; sourceTree = "<group>"; };
+		DD6D71060BA97CB80071E035 /* MQJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQJob.h; sourceTree = "<group>"; };
+		DD6D71070BA97CB80071E035 /* MQJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQJob.m; sourceTree = "<group>"; };
+		DD6D71780BA9A9F20071E035 /* MQThreadJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQThreadJob.h; sourceTree = "<group>"; };
+		DD6D71790BA9A9F20071E035 /* MQThreadJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQThreadJob.m; sourceTree = "<group>"; };
+		DD71E78F0BBD591D00E8A751 /* mindquarry-mac-svn.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = "mindquarry-mac-svn.jar"; path = "Java/dist/mindquarry-mac-svn.jar"; sourceTree = "<group>"; };
+		DD7D79580C04700A007B996A /* oldDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = wrapper.xcdatamodel; path = oldDataModel.xcdatamodel; sourceTree = "<group>"; };
+		DD86617E0B9D95E3000C7B66 /* MQRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQRequest.h; sourceTree = "<group>"; };
+		DD86617F0B9D95E3000C7B66 /* MQRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQRequest.m; sourceTree = "<group>"; };
+		DD8661A30B9D97E2000C7B66 /* MQTeamsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTeamsRequest.h; sourceTree = "<group>"; };
+		DD8661A40B9D97E2000C7B66 /* MQTeamsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTeamsRequest.m; sourceTree = "<group>"; };
+		DD8662770B9D9BBD000C7B66 /* MQTasksRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTasksRequest.h; sourceTree = "<group>"; };
+		DD8662780B9D9BBD000C7B66 /* MQTasksRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTasksRequest.m; sourceTree = "<group>"; };
+		DD8663CA0B9DA28E000C7B66 /* MQTaskPropertiesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTaskPropertiesRequest.h; sourceTree = "<group>"; };
+		DD8663CB0B9DA28E000C7B66 /* MQTaskPropertiesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTaskPropertiesRequest.m; sourceTree = "<group>"; };
+		DD86655C0B9DB2F7000C7B66 /* DesktopClientAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = DesktopClientAppIcon.icns; path = Resources/DesktopClientAppIcon.icns; sourceTree = "<group>"; };
+		DD86655D0B9DB2F7000C7B66 /* task-done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-done.png"; path = "Resources/task-done.png"; sourceTree = "<group>"; };
+		DD86655E0B9DB2F7000C7B66 /* task-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-new.png"; path = "Resources/task-new.png"; sourceTree = "<group>"; };
+		DD86655F0B9DB2F7000C7B66 /* task-paused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-paused.png"; path = "Resources/task-paused.png"; sourceTree = "<group>"; };
+		DD8665600B9DB2F7000C7B66 /* task-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "task-running.png"; path = "Resources/task-running.png"; sourceTree = "<group>"; };
+		DD8665B70B9DB5A4000C7B66 /* MQTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTaskCell.h; sourceTree = "<group>"; };
+		DD8665B80B9DB5A4000C7B66 /* MQTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTaskCell.m; sourceTree = "<group>"; };
+		DD8665EC0B9DB604000C7B66 /* OFGradientTableView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = OFGradientTableView.h; sourceTree = "<group>"; };
+		DD8665ED0B9DB604000C7B66 /* OFGradientTableView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = OFGradientTableView.m; sourceTree = "<group>"; };
+		DDB81B4F0C69CBDD002AADF8 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		DDB81B5A0C69CE0D002AADF8 /* GrowlNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlNotifications.h; path = Source/GrowlNotifications.h; sourceTree = "<group>"; };
+		DDE33FB90BA6D60400CE286B /* JNIHelper.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JNIHelper.h; sourceTree = "<group>"; };
+		DDE33FBA0BA6D60400CE286B /* JNIHelper.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = JNIHelper.mm; sourceTree = "<group>"; };
+		DDE33FBB0BA6D60400CE286B /* JVMController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JVMController.h; sourceTree = "<group>"; };
+		DDE33FBC0BA6D60400CE286B /* JVMController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = JVMController.mm; sourceTree = "<group>"; };
+		DDE33FBD0BA6D60400CE286B /* SVNController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SVNController.h; sourceTree = "<group>"; };
+		DDE33FBE0BA6D60400CE286B /* SVNController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = SVNController.mm; sourceTree = "<group>"; };
+		DDE33FC10BA6D60400CE286B /* StatusTransformer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StatusTransformer.h; sourceTree = "<group>"; };
+		DDE33FC20BA6D60400CE286B /* StatusTransformer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StatusTransformer.m; sourceTree = "<group>"; };
+		DDE33FFD0BA6DB4000CE286B /* MQTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTeam.h; sourceTree = "<group>"; };
+		DDE33FFE0BA6DB4000CE286B /* MQTeam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MQTeam.mm; sourceTree = "<group>"; };
+		DDF001030BA850C60008C3AA /* MQTaskInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQTaskInfoRequest.h; sourceTree = "<group>"; };
+		DDF001040BA850C60008C3AA /* MQTaskInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQTaskInfoRequest.m; sourceTree = "<group>"; };
+		DDF0016B0BA859530008C3AA /* JavaVM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaVM.framework; path = /System/Library/Frameworks/JavaVM.framework; sourceTree = "<absolute>"; };
+		DDFA7D6E0BAEEF7F0081BB87 /* MQChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MQChange.h; sourceTree = "<group>"; };
+		DDFA7D6F0BAEEF7F0081BB87 /* MQChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQChange.m; sourceTree = "<group>"; };
+		DDFA7E040BAF040D0081BB87 /* NSNumber+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Additions.h"; sourceTree = "<group>"; };
+		DDFA7E050BAF040D0081BB87 /* NSNumber+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Additions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				DDF0016C0BA859530008C3AA /* JavaVM.framework in Frameworks */,
+				DDB81B500C69CBDD002AADF8 /* Growl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DD576B550BAEA27700460C68 /* Controller */,
+				DDE33FB50BA6D5FD00CE286B /* SVN */,
+				DD0B4A420BA1657D0075798B /* Model */,
+				DD0B4A410BA165700075798B /* Requests */,
+				DD0B4A430BA165880075798B /* Interface */,
+				DDFA7E040BAF040D0081BB87 /* NSNumber+Additions.h */,
+				DDFA7E050BAF040D0081BB87 /* NSNumber+Additions.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77C82804067257F0000B614F /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Mindquarry Desktop Client.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Mindquarry Desktop Client */ = {
+			isa = PBXGroup;
+			children = (
+				7756732906782D8800D1FEB8 /* Models */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "Mindquarry Desktop Client";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DDB81B5A0C69CE0D002AADF8 /* GrowlNotifications.h */,
+				32CA4F630368D1EE00C91783 /* Mindquarry_Desktop_Client_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD71E78F0BBD591D00E8A751 /* mindquarry-mac-svn.jar */,
+				DD099E060BA006B2002FD5DD /* GFX */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDB81B4F0C69CBDD002AADF8 /* Growl.framework */,
+				DDF0016B0BA859530008C3AA /* JavaVM.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7756732906782D8800D1FEB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD7D79580C04700A007B996A /* oldDataModel.xcdatamodel */,
+				770B37EC0679A11B001EADE2 /* Mindquarry_Desktop_Client_DataModel.xcdatamodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DD099E060BA006B2002FD5DD /* GFX */ = {
+			isa = PBXGroup;
+			children = (
+				DD29A7910BC1064900583931 /* action-both.png */,
+				DD29A7920BC1064900583931 /* action-down.png */,
+				DD29A7930BC1064900583931 /* action-up.png */,
+				DD6D6FD80BA958350071E035 /* mindquarry-tasks.png */,
+				DD6D6FD40BA957E60071E035 /* mindquarry-documents.png */,
+				DD0B4A550BA166D60075798B /* task-add.png */,
+				DD09A62A0BA04585002FD5DD /* AlertStopIcon.icns */,
+				DD09A09B0BA0070A002FD5DD /* StatusBackground.png */,
+				DD86655C0B9DB2F7000C7B66 /* DesktopClientAppIcon.icns */,
+				DD86655D0B9DB2F7000C7B66 /* task-done.png */,
+				DD86655E0B9DB2F7000C7B66 /* task-new.png */,
+				DD86655F0B9DB2F7000C7B66 /* task-paused.png */,
+				DD8665600B9DB2F7000C7B66 /* task-running.png */,
+				DD2ED3670B9ECFF4000238CE /* task-critical.png */,
+				DD2ED3680B9ECFF4000238CE /* task-important.png */,
+				DD2ED3690B9ECFF4000238CE /* task-low.png */,
+				DD2ED36A0B9ECFF4000238CE /* task-medium.png */,
+				DD2ED70F0B9EDDFA000238CE /* task-edit.png */,
+				DD2ED6EE0B9EDC97000238CE /* info.icns */,
+				DD2ED7080B9EDD88000238CE /* synchronize-vertical.png */,
+				DD2EDA180B9EE460000238CE /* servers.png */,
+				DD576B1E0BAEA09900460C68 /* refresh.png */,
+				DD576E5A0BAED3F500460C68 /* sync-down.png */,
+				DD576E5B0BAED3F500460C68 /* sync-up.png */,
+			);
+			name = GFX;
+			sourceTree = "<group>";
+		};
+		DD09A3190BA01E70002FD5DD /* Filter bar */ = {
+			isa = PBXGroup;
+			children = (
+				DD09A3090BA01E6D002FD5DD /* LRFilterBar.h */,
+				DD09A30A0BA01E6D002FD5DD /* LRFilterBar.m */,
+				DD09A30B0BA01E6D002FD5DD /* LRFilterButton.h */,
+				DD09A30C0BA01E6D002FD5DD /* LRFilterButton.m */,
+				DD09A30D0BA01E6D002FD5DD /* LRFilterButtonCell.h */,
+				DD09A30E0BA01E6D002FD5DD /* LRFilterButtonCell.m */,
+				DD09A30F0BA01E6D002FD5DD /* LROverflowButton.h */,
+				DD09A3100BA01E6D002FD5DD /* LROverflowButton.m */,
+				DD09A3110BA01E6D002FD5DD /* CTGradient.h */,
+				DD09A3120BA01E6D002FD5DD /* CTGradient.m */,
+			);
+			name = "Filter bar";
+			sourceTree = "<group>";
+		};
+		DD0B4A410BA165700075798B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D71060BA97CB80071E035 /* MQJob.h */,
+				DD6D71070BA97CB80071E035 /* MQJob.m */,
+				DD86617E0B9D95E3000C7B66 /* MQRequest.h */,
+				DD86617F0B9D95E3000C7B66 /* MQRequest.m */,
+				DD8661A30B9D97E2000C7B66 /* MQTeamsRequest.h */,
+				DD8661A40B9D97E2000C7B66 /* MQTeamsRequest.m */,
+				DD8662770B9D9BBD000C7B66 /* MQTasksRequest.h */,
+				DD8662780B9D9BBD000C7B66 /* MQTasksRequest.m */,
+				DD8663CA0B9DA28E000C7B66 /* MQTaskPropertiesRequest.h */,
+				DD8663CB0B9DA28E000C7B66 /* MQTaskPropertiesRequest.m */,
+				DD2ED17B0B9EBDFD000238CE /* MQUpdateRequest.h */,
+				DD2ED17C0B9EBDFD000238CE /* MQUpdateRequest.m */,
+				DDF001030BA850C60008C3AA /* MQTaskInfoRequest.h */,
+				DDF001040BA850C60008C3AA /* MQTaskInfoRequest.m */,
+				DD6D71780BA9A9F20071E035 /* MQThreadJob.h */,
+				DD6D71790BA9A9F20071E035 /* MQThreadJob.m */,
+				DD29A8160BC1553400583931 /* MQSVNJob.h */,
+				DD29A8170BC1553400583931 /* MQSVNJob.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		DD0B4A420BA1657D0075798B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD09A5640BA03C26002FD5DD /* MQServer.h */,
+				DD09A5650BA03C26002FD5DD /* MQServer.m */,
+				DDE33FFD0BA6DB4000CE286B /* MQTeam.h */,
+				DDE33FFE0BA6DB4000CE286B /* MQTeam.mm */,
+				DD2ED2D30B9EC8D2000238CE /* MQTask.h */,
+				DD2ED2D40B9EC8D2000238CE /* MQTask.m */,
+				DDFA7D6E0BAEEF7F0081BB87 /* MQChange.h */,
+				DDFA7D6F0BAEEF7F0081BB87 /* MQChange.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DD0B4A430BA165880075798B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				DD8665B70B9DB5A4000C7B66 /* MQTaskCell.h */,
+				DD8665B80B9DB5A4000C7B66 /* MQTaskCell.m */,
+				DD8665EC0B9DB604000C7B66 /* OFGradientTableView.h */,
+				DD8665ED0B9DB604000C7B66 /* OFGradientTableView.m */,
+				DD09A3190BA01E70002FD5DD /* Filter bar */,
+				DD6D704C0BA968910071E035 /* MQChangeCell.h */,
+				DD6D704D0BA968910071E035 /* MQChangeCell.m */,
+				DD5F20CE0BB036C400DF8699 /* PathAbbreviation.h */,
+				DD5F20CF0BB036C400DF8699 /* PathAbbreviation.m */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		DD576B550BAEA27700460C68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77C8280B06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.h */,
+				77C8280C06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.m */,
+				DD39F4F90B9D7FD200384D0C /* RequestController.h */,
+				DD39F4FA0B9D7FD200384D0C /* RequestController.m */,
+				DD576B580BAEA28C00460C68 /* RequestController+Toolbar.h */,
+				DD576B590BAEA28C00460C68 /* RequestController+Toolbar.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DDE33FB50BA6D5FD00CE286B /* SVN */ = {
+			isa = PBXGroup;
+			children = (
+				DD1CD07A0BAAF3DA00BF34BA /* MacSVNHelperNative.h */,
+				DD1CD07D0BAAF3EE00BF34BA /* MacSVNHelperNative.mm */,
+				DDE33FB90BA6D60400CE286B /* JNIHelper.h */,
+				DDE33FBA0BA6D60400CE286B /* JNIHelper.mm */,
+				DDE33FBB0BA6D60400CE286B /* JVMController.h */,
+				DDE33FBC0BA6D60400CE286B /* JVMController.mm */,
+				DDE33FBD0BA6D60400CE286B /* SVNController.h */,
+				DDE33FBE0BA6D60400CE286B /* SVNController.mm */,
+				DDE33FC10BA6D60400CE286B /* StatusTransformer.h */,
+				DDE33FC20BA6D60400CE286B /* StatusTransformer.m */,
+			);
+			name = SVN;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Mindquarry Desktop Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Mindquarry Desktop Client" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				DDB81BE00C69DBA1002AADF8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mindquarry Desktop Client";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Mindquarry Desktop Client";
+			productReference = 8D1107320486CEB800E47090 /* Mindquarry Desktop Client.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Mindquarry Desktop Client" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Mindquarry Desktop Client */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Mindquarry Desktop Client */,
+				DD2EDB040B9F2180000238CE /* Disk Image */,
+				DDE33FD10BA6D61800CE286B /* Java Ant */,
+				DD1CD0870BAAF47400BF34BA /* Java Headers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD71E7900BBD591D00E8A751 /* mindquarry-mac-svn.jar in Resources */,
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				DD8665610B9DB2F7000C7B66 /* DesktopClientAppIcon.icns in Resources */,
+				DD8665620B9DB2F7000C7B66 /* task-done.png in Resources */,
+				DD8665630B9DB2F7000C7B66 /* task-new.png in Resources */,
+				DD8665640B9DB2F7000C7B66 /* task-paused.png in Resources */,
+				DD8665650B9DB2F7000C7B66 /* task-running.png in Resources */,
+				DD2ED36B0B9ECFF4000238CE /* task-critical.png in Resources */,
+				DD2ED36C0B9ECFF4000238CE /* task-important.png in Resources */,
+				DD2ED36D0B9ECFF4000238CE /* task-low.png in Resources */,
+				DD2ED36E0B9ECFF4000238CE /* task-medium.png in Resources */,
+				DD2ED6EF0B9EDC97000238CE /* info.icns in Resources */,
+				DD2ED7090B9EDD88000238CE /* synchronize-vertical.png in Resources */,
+				DD2ED7100B9EDDFA000238CE /* task-edit.png in Resources */,
+				DD2EDA190B9EE460000238CE /* servers.png in Resources */,
+				DD09A09C0BA0070A002FD5DD /* StatusBackground.png in Resources */,
+				DD09A62B0BA04585002FD5DD /* AlertStopIcon.icns in Resources */,
+				DD0B4A560BA166D60075798B /* task-add.png in Resources */,
+				DD6D6FD60BA957E60071E035 /* mindquarry-documents.png in Resources */,
+				DD6D6FD90BA958350071E035 /* mindquarry-tasks.png in Resources */,
+				DD576B1F0BAEA09900460C68 /* refresh.png in Resources */,
+				DD576E5C0BAED3F500460C68 /* sync-down.png in Resources */,
+				DD576E5D0BAED3F500460C68 /* sync-up.png in Resources */,
+				DD29A7940BC1064900583931 /* action-both.png in Resources */,
+				DD29A7950BC1064900583931 /* action-down.png in Resources */,
+				DD29A7960BC1064900583931 /* action-up.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DD1CD0860BAAF47400BF34BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\njavah -classpath Java/build -o Source/MacSVNHelperNative.h com.mindquarry.desktop.workspace.MacSVNHelper\n";
+		};
+		DD2EDB030B9F2180000238CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\n# shell script goes here\n\n# export REV=`/usr/local/bin/svn info Mindquarry\\ Desktop\\ Client.xcodeproj/jonas.mode1 | grep Revision | cut -d: -f2 | cut -d\\  -f2`\n\nexport TITLE=\"Mindquarry Desktop Client\"\nexport FOLDER=\"${BUILT_PRODUCTS_DIR}/$TITLE\"\nexport DMG=\"${BUILT_PRODUCTS_DIR}/$TITLE.dmg\"\nexport DMGPRE=\"${BUILT_PRODUCTS_DIR}/$TITLE.pre.dmg\"\n\ntest -d \"$FOLDER\" && rm -rf \"$FOLDER\"\n\nmkdir \"$FOLDER\"\n\ntest -f AppHardLink && rm -f AppHardLink\nopen AppHardLink.zip\nsleep 0.5\ncp -v AppHardLink \"$FOLDER/Applications\"\n\ncp -v Resources/dmg-build/myDS_Store \"$FOLDER/.DS_Store\"\n\ncp -v Resources/dmg-build/background.png \"$FOLDER\"\n/Developer/Tools/SetFile -a V \"$FOLDER/background.png\"\n\ncp -r \"${BUILT_PRODUCTS_DIR}/Mindquarry Desktop Client.app\" \"$FOLDER/\"\n\ntest -f \"$DMG\" && rm \"$DMG\"\ntest -f \"$DMGPRE\" && rm \"$DMGPRE\"\n\nhdiutil makehybrid -hfs -hfs-volume-name \"$TITLE\" -hfs-openfolder \"$FOLDER\" \"$FOLDER\" -o \"$DMGPRE\" || exit 1\n\nhdiutil convert \"$DMGPRE\" -format UDBZ -o \"$DMG\" || exit 1\n\n/Developer/Tools/SetFile -a E \"$DMG\"\n\ntest -f \"$DMGPRE\" && rm \"$DMGPRE\"\ntest -d \"$FOLDER\" && rm -rf \"$FOLDER\"\ntest -f AppHardLink && rm -f AppHardLink\n\nexit 0";
+		};
+		DDE33FD00BA6D61800CE286B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\nant -f Java/build.xml\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				77C8280E06725ACE000B614F /* Mindquarry_Desktop_Client_AppDelegate.m in Sources */,
+				770B37ED0679A11B001EADE2 /* Mindquarry_Desktop_Client_DataModel.xcdatamodel in Sources */,
+				DD39F4FB0B9D7FD200384D0C /* RequestController.m in Sources */,
+				DD8661800B9D95E3000C7B66 /* MQRequest.m in Sources */,
+				DD8661A50B9D97E2000C7B66 /* MQTeamsRequest.m in Sources */,
+				DD8662790B9D9BBD000C7B66 /* MQTasksRequest.m in Sources */,
+				DD8663CC0B9DA28E000C7B66 /* MQTaskPropertiesRequest.m in Sources */,
+				DD8665B90B9DB5A4000C7B66 /* MQTaskCell.m in Sources */,
+				DD8665EE0B9DB604000C7B66 /* OFGradientTableView.m in Sources */,
+				DD2ED17D0B9EBDFD000238CE /* MQUpdateRequest.m in Sources */,
+				DD2ED2D50B9EC8D2000238CE /* MQTask.m in Sources */,
+				DD09A3130BA01E6D002FD5DD /* LRFilterBar.m in Sources */,
+				DD09A3140BA01E6D002FD5DD /* LRFilterButton.m in Sources */,
+				DD09A3150BA01E6D002FD5DD /* LRFilterButtonCell.m in Sources */,
+				DD09A3160BA01E6D002FD5DD /* LROverflowButton.m in Sources */,
+				DD09A3170BA01E6D002FD5DD /* CTGradient.m in Sources */,
+				DD09A5660BA03C26002FD5DD /* MQServer.m in Sources */,
+				DDE33FC70BA6D60400CE286B /* JNIHelper.mm in Sources */,
+				DDE33FC80BA6D60400CE286B /* JVMController.mm in Sources */,
+				DDE33FC90BA6D60400CE286B /* SVNController.mm in Sources */,
+				DDE33FCB0BA6D60400CE286B /* StatusTransformer.m in Sources */,
+				DDE33FFF0BA6DB4000CE286B /* MQTeam.mm in Sources */,
+				DDF001050BA850C60008C3AA /* MQTaskInfoRequest.m in Sources */,
+				DD6D704E0BA968910071E035 /* MQChangeCell.m in Sources */,
+				DD6D71080BA97CB80071E035 /* MQJob.m in Sources */,
+				DD6D717A0BA9A9F20071E035 /* MQThreadJob.m in Sources */,
+				DD1CD07E0BAAF3EE00BF34BA /* MacSVNHelperNative.mm in Sources */,
+				DD576B5A0BAEA28C00460C68 /* RequestController+Toolbar.m in Sources */,
+				DDFA7D700BAEEF7F0081BB87 /* MQChange.m in Sources */,
+				DDFA7E060BAF040D0081BB87 /* NSNumber+Additions.m in Sources */,
+				DD5F20D00BB036C400DF8699 /* PathAbbreviation.m in Sources */,
+				DD29A8180BC1553400583931 /* MQSVNJob.m in Sources */,
+				DD7D79590C04700A007B996A /* oldDataModel.xcdatamodel in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD2EDD940B9F2197000238CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* Mindquarry Desktop Client */;
+			targetProxy = DD2EDD930B9F2197000238CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26FC0A850875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mindquarry_Desktop_Client_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Mindquarry Desktop Client";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		26FC0A860875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = automatic;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mindquarry_Desktop_Client_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "Mindquarry Desktop Client";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26FC0A890875C7B200E6366F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		26FC0A8A0875C7B200E6366F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		DD1CD0900BAAF47500BF34BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Java Headers";
+			};
+			name = Debug;
+		};
+		DD1CD0910BAAF47500BF34BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Java Headers";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		DD2EDD980B9F21B5000238CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Disk Image";
+			};
+			name = Debug;
+		};
+		DD2EDD990B9F21B5000238CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Disk Image";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		DDE33FDA0BA6D62200CE286B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Java Ant";
+			};
+			name = Debug;
+		};
+		DDE33FDB0BA6D62200CE286B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Java Ant";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FC0A840875C7B200E6366F /* Build configuration list for PBXNativeTarget "Mindquarry Desktop Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A850875C7B200E6366F /* Debug */,
+				26FC0A860875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Mindquarry Desktop Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FC0A890875C7B200E6366F /* Debug */,
+				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD1CD08F0BAAF47500BF34BA /* Build configuration list for PBXAggregateTarget "Java Headers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD1CD0900BAAF47500BF34BA /* Debug */,
+				DD1CD0910BAAF47500BF34BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2EDD970B9F21B5000238CE /* Build configuration list for PBXAggregateTarget "Disk Image" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2EDD980B9F21B5000238CE /* Debug */,
+				DD2EDD990B9F21B5000238CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDE33FD90BA6D62200CE286B /* Build configuration list for PBXAggregateTarget "Java Ant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDE33FDA0BA6D62200CE286B /* Debug */,
+				DDE33FDB0BA6D62200CE286B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,0 +1,414 @@
+<!--
+    Copyright (C) 2006-2007 Mindquarry GmbH, All Rights Reserved
+    
+    The contents of this file are subject to the Mozilla Public License
+    Version 1.1 (the "License"); you may not use this file except in
+    compliance with the License. You may obtain a copy of the License at
+    http://www.mozilla.org/MPL/
+    
+    Software distributed under the License is distributed on an "AS IS"
+    basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+    License for the specific language governing rights and limitations
+    under the License.
+-->
+<project name="mindquarry-desktop-client" default="standalone" basedir=".">
+	<property name="maven.build.output" value="target/classes" />
+	<property name="maven.build.directory" value="target" />
+
+	<property name="maven.repo.local" value="${user.home}/.m2/repository" />
+
+	<property name="standalone.dist.target" value="${maven.build.directory}/standalone" />
+	<property name="standalone.dist.target.lib" value="${standalone.dist.target}/lib" />
+	<property name="web.dist.target" value="${maven.build.directory}/webstart" />
+
+	<property name="client.version" value="1.2-beta-SNAPSHOT" />
+	<property name="icons.version" value="0.9-SNAPSHOT" />
+	
+	<property name="mac.build.source" value="src/mac" />
+	<property name="mac.bundle.name" value="Mindquarry Desktop Client" />
+	<property name="mac.dmg.imagename" value="Mindquarry Desktop Client" />
+	
+	<condition property="buildingOnMacOSX">
+		<and>
+			<os family="mac" />
+			<os family="unix" />
+		</and>
+	</condition>
+
+	<!-- common classpath shared by all distributions -->
+	<patternset id="generic-jars-in-local-maven-repo">
+		<!-- Mindquarry dependencies -->
+		<include name="com/mindquarry/tools/mindquarry-desktop-commons/${client.version}/mindquarry-desktop-commons-${client.version}.jar" />
+		<include name="com/mindquarry/icons/mindquarry-icons/${icons.version}/mindquarry-icons-${icons.version}.jar" />
+		<include name="org/tango-project/tango-icon-theme/0.8.0/tango-icon-theme-0.8.0.jar" />
+
+		<!-- SVN dependencies -->
+		<include name="com/svnkit/svnkit/1.1.0-Mindquarry_7/svnkit-1.1.0-Mindquarry_7.jar" />
+		<include name="org/tigris/subversion/javahl/1.4.2-Mindquarry_2/javahl-1.4.2-Mindquarry_2.jar" />
+		<include name="ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210.jar" />
+
+		<!-- Logging dependencies -->
+		<include name="logkit/logkit/1.0.1/logkit-1.0.1.jar" />
+		<include name="log4j/log4j/1.2.12/log4j-1.2.12.jar" />
+
+		<!-- Eclipse/SWT/JFace dependencies -->
+		<include name="swt/jface/3.3.0.I20061213-0010/jface-3.3.0.I20061213-0010.jar" />
+		<include name="org/eclipse/core/commands/3.3.0.I20061114/commands-3.3.0.I20061114.jar" />
+		<include name="org/eclipse/equinox/common/3.3.0.v20061117/common-3.3.0.v20061117.jar" />
+
+		<!-- XML dependencies -->
+		<include name="dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+		<include name="dax/dax/0.2/dax-0.2.jar" />
+		<include name="jaxen/jaxen/1.1-beta-11/jaxen-1.1-beta-11.jar" />
+
+		<!-- Spring dependencies -->
+		<include name="org/springframework/spring-context/2.0.1/spring-context-2.0.1.jar" />
+		<include name="org/springframework/spring-core/2.0.1/spring-core-2.0.1.jar" />
+		<include name="org/springframework/spring-beans/2.0.1/spring-beans-2.0.1.jar" />
+
+		<!-- Jakarta Commons dependencies -->
+		<include name="commons-i18n/commons-i18n/0.5/commons-i18n-0.5.jar" />
+		<include name="commons-logging/commons-logging/1.1/commons-logging-1.1.jar" />
+		<include name="commons-codec/commons-codec/1.3/commons-codec-1.3.jar" />
+		<include name="commons-io/commons-io/1.3.1/commons-io-1.3.1.jar" />
+		<include name="commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar" />
+
+		<!-- Sun/Java dependencies -->
+		<include name="javax/activation/activation/1.1/activation-1.1.jar" />
+
+		<!-- Open Office dependencies -->
+		<include name="org/openoffice/ridl/2.2.1/ridl-2.2.1.jar" />
+		<include name="org/openoffice/juh/2.2.1/juh-2.2.1.jar" />
+		<include name="org/openoffice/jurt/2.2.1/jurt-2.2.1.jar" />
+		<include name="org/openoffice/unoil/2.2.1/unoil-2.2.1.jar" />
+
+		<!-- Other dependencies -->
+		<include name="jmimemagic/jmimemagic/0.1.2/jmimemagic-0.1.2.jar" />
+		<include name="ini4j/ini4j/0.2.6/ini4j-0.2.6.jar" />
+	</patternset>
+
+	<!-- standalone distribution for Windows -->
+	<target name="standalone-windows" description="Create directory with JARs for standalone Windows distribution">
+		<copy file="${maven.build.directory}/mindquarry-desktop-client-${client.version}.jar" 
+			tofile="${standalone.dist.target}/windows/mindquarry-desktop-client.jar" />
+
+		<copy todir="${standalone.dist.target}/windows/lib/" flatten="true">
+			<fileset dir="${maven.repo.local}">
+				<patternset refid="generic-jars-in-local-maven-repo" />
+			</fileset>
+		</copy>
+
+		<copy todir="${standalone.dist.target}/windows/lib/" flatten="true">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/windows/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+	</target>
+
+	<target name="package-windows" depends="standalone-windows" 
+		description="Creates a ZIP package containing the Windows distribution of the client">
+		
+		<zip destfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-windows_x86_32.zip" 
+			basedir="${maven.build.directory}/standalone/windows" update="true" />
+	</target>
+
+	<!-- standalone distribution for Linux -->
+	<target name="standalone-linux" description="Create directory with JARs for standalone Linux distribution">
+		<copy file="${maven.build.directory}/mindquarry-desktop-client-${client.version}.jar" 
+			tofile="${standalone.dist.target}/linux/mindquarry-desktop-client.jar" />
+
+		<copy todir="${standalone.dist.target}/linux/lib/" flatten="true">
+			<fileset dir="${maven.repo.local}">
+				<patternset refid="generic-jars-in-local-maven-repo" />
+			</fileset>
+		</copy>
+
+		<copy todir="${standalone.dist.target}/linux/lib/" flatten="true">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/linux/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+	</target>
+
+	<target name="package-linux" depends="standalone-linux"
+		description="Creates a ZIP package containing the Linux distribution of the client">
+		
+		<tar tarfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-linux_x86_32.tar"
+			basedir="${maven.build.directory}/standalone/linux" />
+		<gzip zipfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-linux_x86_32.tar.gz"
+			src="${maven.build.directory}/mindquarry-desktop-client-${client.version}-linux_x86_32.tar" />
+		<delete file="${maven.build.directory}/mindquarry-desktop-client-${client.version}-linux_x86_32.tar" />
+	</target>
+
+	<!-- standalone distribution for Mac OS X -->
+	<target name="standalone-macosx" description="Create directory with JARs for standalone Mac OSX distribution">
+		<copy file="${maven.build.directory}/mindquarry-desktop-client-${client.version}.jar" tofile="${standalone.dist.target}/macosx/mindquarry-desktop-client.jar" />
+
+		<copy todir="${standalone.dist.target}/macosx/lib/" flatten="true">
+			<fileset dir="${maven.repo.local}">
+				<patternset refid="generic-jars-in-local-maven-repo" />
+			</fileset>
+		</copy>
+
+		<copy todir="${standalone.dist.target}/macosx/lib/" flatten="true">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/macosx/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+	</target>
+
+	<target name="package-macosx" depends="standalone-macosx"
+		description="Creates a ZIP package containing the Mac OS X distribution of the client">
+		
+		<tar tarfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx.tar"
+			basedir="${maven.build.directory}/standalone/macosx" />
+		<gzip zipfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx.tar.gz"
+			src="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx.tar" />
+		<delete file="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx.tar" />
+	</target>
+
+	<target name="macosx-app-bundle" depends="standalone-macosx"
+		description="Creates a standard Mac OSX application bundle">
+		
+		<taskdef name="jarbundler"
+			classname="net.sourceforge.jarbundler.JarBundler"
+			classpath="${maven.repo.local}/net/sourceforge/jarbundler/1.9.1/jarbundler-1.9.1.jar" />
+
+		<jarbundler
+			dir="${maven.build.directory}"
+			verbose="true"
+			showPlist="true"
+			shortname="Mindquarry"
+			name="${mac.bundle.name}"
+			bundleid="com.mindquarry.desktop"
+			mainclass="org.eclipse.swt.MindClient"
+			icon="${mac.build.source}/DesktopClientAppIcon.icns"
+			version="${client.version}"
+			vmoptions="-Dapple.laf.useScreenMenuBar=true -Dorg.eclipse.swt.internal.carbon.smallFonts -Dorg.eclipse.swt.internal.carbon.noFocusRing"
+			jvmversion="1.5+"
+			swt="true"
+			workingdirectory="$APP_PACKAGE/Contents/Resources/Java"
+			stubfile="${mac.build.source}/JavaApplicationStub">
+
+			<jarfileset dir="${standalone.dist.target}/macosx/">
+				<include name="*.jar" />
+				<include name="lib/*.jar" />
+			</jarfileset>
+		</jarbundler>
+	</target>
+	
+	<target name="macosx-dmg" depends="macosx-app-bundle" if="buildingOnMacOSX"
+		description="Creates a DMG image with the Mac application bundle and an installation guide as dmg background image (Note: this only runs on a mac)">
+		
+		<property name="mac.dmg.folder" value="${maven.build.directory}/${mac.dmg.imagename}" />
+		
+		<mkdir dir="${mac.dmg.folder}"/>
+		
+		<delete file="${mac.build.source}/AppHardLink"/>
+		<!-- this zip contains a hard link to /Applications for mac-style
+		     drag'n'drop install inside the dmg folder (this only works on MacOSX) -->
+		<exec executable="open">
+			<arg value="${mac.build.source}/AppHardLink.zip"/>
+		</exec>
+		<sleep seconds="3"/> <!-- wait for extraction (open is asynchronous) -->
+		<exec executable="cp">
+			<arg value="${mac.build.source}/AppHardLink"/>
+			<arg value="${mac.dmg.folder}/Applications"/>
+		</exec>
+		<delete file="${mac.build.source}/AppHardLink"/>
+		
+		<!-- finally the app bundle itself -->
+		<copy todir="${mac.dmg.folder}/${mac.bundle.name}.app">
+			<fileset dir="${maven.build.directory}/${mac.bundle.name}.app"/>
+		</copy>
+		<!-- ensure that the JavaApplicationStub binary has executable permissions -->
+		<chmod perm="755" file="${mac.dmg.folder}/${mac.bundle.name}.app/Contents/MacOS/JavaApplicationStub"/>
+		
+		<!-- a folder background image as install guide -->
+		<copy file="${mac.build.source}/background.png" tofile="${mac.dmg.folder}/background.png" />
+		<!-- hide the file (this only works on MacOSX) -->
+		<exec executable="/Developer/Tools/SetFile">
+			<arg value="-a"/>
+			<arg value="V"/>
+			<arg value="${mac.dmg.folder}/background.png"/>
+		</exec>
+		<!-- copy a pre-built mac finder folder settings file -->
+		<copy file="${mac.build.source}/template_DS_Store" tofile="${mac.dmg.folder}/.DS_Store" />
+		
+		<!-- create a dmg from a folder (this only works on MacOSX) -->
+		<exec executable="hdiutil">
+			<arg value="create" />
+			<arg value="-srcdir" />
+			<arg value="${mac.dmg.folder}" />
+			<arg value="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx.dmg" />
+		</exec>
+		
+		<delete dir="${mac.dmg.folder}" />
+	</target>
+
+	<target name="macosx-zip" depends="macosx-app-bundle"
+		description="Creates a zipped version of the mac app bundle, works on all operating systems">
+		
+		<zip destfile="${maven.build.directory}/mindquarry-desktop-client-${client.version}-macosx-appbundle.zip">
+			<zipfileset dir="${maven.build.directory}/${mac.bundle.name}.app" prefix="${mac.bundle.name}.app"/>
+			<!-- ensure that the JavaApplicationStub binary has executable permissions -->
+			<zipfileset file="${maven.build.directory}/${mac.bundle.name}.app/Contents/MacOS/JavaApplicationStub"
+				filemode="755" prefix="${mac.bundle.name}.app/Contents/MacOS/"/>
+		</zip>
+	</target>
+	
+	<!-- package all target platforms -->
+	<target name="standalone" depends="package-windows, package-linux, package-macosx, macosx-dmg, macosx-zip" 
+		description="Convenience target for packaging standalone distributions for all target platforms">
+		
+		<delete dir="${maven.build.directory}/standalone" />
+	</target>
+
+	<!-- Java Web Start packaging target -->
+	<target name="package-webstart" description="Create directories with JARs for the webstart distribution">
+		<!-- NOTE: target names need to be in the ...__Vxy.jar format (required by our webstart servlet)!! -->
+
+		<!-- Mindquarry dependencies -->
+		<copy file="${maven.build.directory}/mindquarry-desktop-client-${client.version}.jar" tofile="${web.dist.target}/client/1.2/MindClient__V1.2.jar" />
+		<copy file="${maven.repo.local}/com/mindquarry/tools/mindquarry-desktop-commons/${client.version}/mindquarry-desktop-commons-${client.version}.jar" tofile="${web.dist.target}/client/1.2/mindquarry-desktop-commons__V1.2.jar" />
+		<copy file="${maven.repo.local}/com/mindquarry/icons/mindquarry-icons/${icons.version}/mindquarry-icons-${icons.version}.jar" tofile="${web.dist.target}/icons/mindquarry-icons__V0.9.jar" />
+		<copy file="${maven.repo.local}/org/tango-project/tango-icon-theme/0.8.0/tango-icon-theme-0.8.0.jar" tofile="${web.dist.target}/icons/tango-icon-theme__V0.8.0.jar" />
+
+		<!-- Logging dependencies -->
+		<copy file="${maven.repo.local}/logkit/logkit/1.0.1/logkit-1.0.1.jar" tofile="${web.dist.target}/logging/logkit__V1.0.1.jar" />
+		<copy file="${maven.repo.local}/log4j/log4j/1.2.12/log4j-1.2.12.jar" tofile="${web.dist.target}/logging/log4j__V1.2.12.jar" />
+
+		<!-- Eclipse/SWT/JFace dependencies -->
+		<copy file="${maven.repo.local}/swt/jface/3.3.0.I20061213-0010/jface-3.3.0.I20061213-0010.jar" tofile="${web.dist.target}/eclipse/jface__V3.3.0.I20061213-0010.jar" />
+		<copy file="${maven.repo.local}/org/eclipse/core/commands/3.3.0.I20061114/commands-3.3.0.I20061114.jar" tofile="${web.dist.target}/eclipse/commands__V3.3.0.I20061114.jar" />
+		<copy file="${maven.repo.local}/org/eclipse/equinox/common/3.3.0.v20061117/common-3.3.0.v20061117.jar" tofile="${web.dist.target}/eclipse/common__V3.3.0.v20061117.jar" />
+
+		<copy todir="${web.dist.target}/windows/">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/windows/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+		<copy file="${web.dist.target}/windows/swt/windows/swt/3.3/swt-3.3.jar" tofile="${web.dist.target}/windows/swt-windows__V3.3.jar" />
+		<delete dir="${web.dist.target}/windows/swt" />
+
+		<copy todir="${web.dist.target}/linux/">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/linux/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+		<copy file="${web.dist.target}/linux/swt/linux/swt/3.3/swt-3.3.jar" tofile="${web.dist.target}/linux/swt-linux__V3.3.jar" />
+		<delete dir="${web.dist.target}/linux/swt" />
+
+		<copy todir="${web.dist.target}/macosx/">
+			<resources>
+				<url url="http://releases.mindquarry.org/swt/macosx/swt/3.3/swt-3.3.jar" />
+			</resources>
+		</copy>
+		<copy file="${web.dist.target}/macosx/swt/macosx/swt/3.3/swt-3.3.jar" tofile="${web.dist.target}/macosx/swt-macosx__V3.3.jar" />
+		<delete dir="${web.dist.target}/macosx/swt" />
+
+		<!-- XML dependencies -->
+		<copy file="${maven.repo.local}/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" tofile="${web.dist.target}/dax/dom4j__V1.6.1.jar" />
+		<copy file="${maven.repo.local}/dax/dax/0.2/dax-0.2.jar" tofile="${web.dist.target}/dax/dax__V0.2.jar" />
+		<copy file="${maven.repo.local}/jaxen/jaxen/1.1-beta-11/jaxen-1.1-beta-11.jar" tofile="${web.dist.target}/dax/jaxen__V1.1-beta-11.jar" />
+
+		<!-- Spring dependencies -->
+		<copy file="${maven.repo.local}/org/springframework/spring-context/2.0.1/spring-context-2.0.1.jar" tofile="${web.dist.target}/spring/spring-context__V2.0.1.jar" />
+		<copy file="${maven.repo.local}/org/springframework/spring-core/2.0.1/spring-core-2.0.1.jar" tofile="${web.dist.target}/spring/spring-core__V2.0.1.jar" />
+		<copy file="${maven.repo.local}/org/springframework/spring-beans/2.0.1/spring-beans-2.0.1.jar" tofile="${web.dist.target}/spring/spring-beans__V2.0.1.jar" />
+
+		<!-- SVN dependencies -->
+		<copy file="${maven.repo.local}/ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210.jar" tofile="${web.dist.target}/javasvn/ganymed-ssh2__Vbuild210.jar" />
+		<copy file="${maven.repo.local}/org/tigris/subversion/javahl/1.4.2-Mindquarry_2/javahl-1.4.2-Mindquarry_2.jar" tofile="${web.dist.target}/javasvn/javahl__V1.4.2-Mindquarry_2.jar" />
+		<copy file="${maven.repo.local}/com/svnkit/svnkit/1.1.0-Mindquarry_7/svnkit-1.1.0-Mindquarry_7.jar" tofile="${web.dist.target}/javasvn/svnkit__V1.1.0-Mindquarry_7.jar" />
+
+		<!-- Jakarta Commons dependencies -->
+		<copy file="${maven.repo.local}/commons-i18n/commons-i18n/0.5/commons-i18n-0.5.jar" tofile="${web.dist.target}/commons/commons-i18n__V0.5.jar" />
+		<copy file="${maven.repo.local}/commons-logging/commons-logging/1.1/commons-logging-1.1.jar" tofile="${web.dist.target}/commons/commons-logging__V1.1.jar" />
+		<copy file="${maven.repo.local}/commons-codec/commons-codec/1.3/commons-codec-1.3.jar" tofile="${web.dist.target}/commons/commons-codec__V1.3.jar" />
+		<copy file="${maven.repo.local}/commons-io/commons-io/1.3.1/commons-io-1.3.1.jar" tofile="${web.dist.target}/commons/commons-io__V1.3.1.jar" />
+		<copy file="${maven.repo.local}/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar" tofile="${web.dist.target}/commons/commons-httpclient__V3.0.1.jar" />
+
+		<!-- Sun/Java dependencies -->
+		<copy file="${maven.repo.local}/javax/activation/activation/1.1/activation-1.1.jar" tofile="${web.dist.target}/javax/activation__V1.1.jar" />
+
+		<!-- Open Office dependencies -->
+		<copy file="${maven.repo.local}/org/openoffice/ridl/2.2.1/ridl-2.2.1.jar" tofile="${web.dist.target}/openoffice/ridl__V2.2.1.jar" />
+		<copy file="${maven.repo.local}/org/openoffice/juh/2.2.1/juh-2.2.1.jar" tofile="${web.dist.target}/openoffice/juh__V2.2.1.jar" />
+		<copy file="${maven.repo.local}/org/openoffice/jurt/2.2.1/jurt-2.2.1.jar" tofile="${web.dist.target}/openoffice/jurt__V2.2.1.jar" />
+		<copy file="${maven.repo.local}/org/openoffice/unoil/2.2.1/unoil-2.2.1.jar" tofile="${web.dist.target}/openoffice/unoil__V2.2.1.jar" />
+
+		<!-- Other dependencies -->
+		<copy file="${maven.repo.local}/jmimemagic/jmimemagic/0.1.2/jmimemagic-0.1.2.jar" tofile="${web.dist.target}/jmimemagic/jmimemagic__V0.1.2.jar" />
+		<copy file="${maven.repo.local}/ini4j/ini4j/0.2.6/ini4j-0.2.6.jar" tofile="${web.dist.target}/ini4j/ini4j__V0.2.6.jar" />
+	</target>
+
+	<!-- JAR sign/unsign targets -->
+	<macrodef name="unsignjar">
+		<attribute name="jar"/>
+
+		<sequential>
+			<!-- Remove any existing signatures from a JAR file. -->
+			<tempfile prefix="usignjar-" destdir="${java.io.tmpdir}" property="temp.file"/>
+			<echo message="Removing signatures from JAR: @{jar}"/>
+			<mkdir dir="${temp.file}"/>
+
+			<unjar src="@{jar}" dest="${temp.file}">
+				<patternset>
+					<include name="**"/>
+					<exclude name="META-INF/*.SF"/>
+					<exclude name="META-INF/*.DSA"/>
+					<exclude name="META-INF/*.RSA"/>
+				</patternset>
+			</unjar>
+			<delete file="@{jar}" failonerror="true"/>
+
+			<!-- Touch it in case the file didn't have a manifest.
+				Otherwise the JAR task below will fail if the manifest 
+				file doesn't exist. -->
+			<mkdir dir="${temp.file}/META-INF"/>
+			<touch file="${temp.file}/META-INF/MANIFEST.MF"/>
+
+			<jar destfile="@{jar}" 
+				basedir="${temp.file}" 
+				includes="**" 
+				manifest="${temp.file}/META-INF/MANIFEST.MF"/>
+
+			<delete dir="${temp.file}" failonerror="true"/>
+		</sequential>
+	</macrodef>
+
+	<taskdef name="foreach" classname="net.sf.antcontrib.logic.ForEach">
+        <classpath>
+            <pathelement location="${maven.repo.local}/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar" />
+        </classpath>
+    </taskdef>
+	
+	<target name="unsign-jar">
+		<unsignjar jar="${jar}"/>
+	</target>
+	
+	<target name="unsign-webstart" depends="package-webstart" 
+		description="Unsigns all JARs related to the webstart distribution">
+		
+		<foreach param="jar" target="unsign-jar">
+            <fileset dir="${web.dist.target}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </foreach>
+	</target>
+	
+	<target name="sign-webstart" depends="package-webstart,unsign-webstart"
+		description="Signs all JARs related to the webstart distribution">
+		
+		<signjar alias="mindquarry" keystore="${basedir}/src/webstart/keystore" storepass="mindquarry">
+		  <path>
+		    <fileset dir="${web.dist.target}" includes="**/*.jar" />
+		  </path>
+		</signjar>
+	</target>
+
+	<!-- Java Web Start distribution target -->
+	<target name="webstart" depends="package-webstart,unsign-webstart,sign-webstart" 
+		description="Convenience target for building the webstart distribution" />
+</project>
